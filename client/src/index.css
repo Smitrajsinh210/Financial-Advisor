@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(24, 185, 119, 0.22), transparent 28%),
+      radial-gradient(circle at right, rgba(56, 189, 248, 0.16), transparent 24%);
+  }
+
+  body.light {
+    @apply bg-slate-50 text-slate-900;
+    background-image:
+      radial-gradient(circle at top left, rgba(24, 185, 119, 0.12), transparent 28%),
+      radial-gradient(circle at right, rgba(56, 189, 248, 0.1), transparent 24%);
+  }
+
+  * {
+    @apply border-slate-800;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl;
+  }
+
+  body.light .card {
+    @apply border-slate-200 bg-white shadow-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-brand-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-brand-400;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10;
+  }
+
+  body.light .btn-secondary {
+    @apply border-slate-200 bg-white text-slate-900 hover:bg-slate-100;
+  }
+
+  .input {
+    @apply w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400;
+  }
+
+  body.light .input {
+    @apply border-slate-200 bg-white text-slate-900;
+  }
+}
